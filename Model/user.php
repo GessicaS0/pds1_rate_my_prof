@@ -150,14 +150,15 @@ class User
 
     public function delete($idUser){
          //para excluir um user antes preciso excluir os comentarios
-         $sql = 'delete from user where idUser = ?';
+         $sql = 'delete from user where idUser = ? limit 1';
 
          $prepare = $this->conexao->prepare($sql);
- 
+        
          $prepare->bindParam(1, $idUser);
  
          if ($prepare->execute() == TRUE) {
-             return true;
+            $count = $prepare->rowCount();   
+             return $count;
          } else {
              return false;
          }
