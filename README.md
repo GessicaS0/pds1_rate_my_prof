@@ -12,7 +12,7 @@ De que coisas você precisa para instalar o software e como instalá-lo?
 
 ```
 XAMPP
-MYSQL
+MYSQL (opcional)
 ```
 
 ## 🛠️ Construído com
